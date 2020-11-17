@@ -11,6 +11,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
+
   //点击登录
   btnLogin: function(e){
 
@@ -42,8 +43,14 @@ Page({
 
   },
 
+  //获取storage
   loginInfo:function(e)
   {
+    wx.getSetting({
+      success(res){
+        console.log(res);
+      }
+    })
     let s = wx.getStorage({
       key: 'token',
       success(res){
@@ -60,29 +67,17 @@ Page({
     })
   },
   onLoad: function () {
-    console.log(this)
     let _this = this;
-
-
-    //发起网络请求
+    //获取首页商品列表
     wx.request({
-      url: 'http://shop.2004.com/api/test',
-      data: {
-        x: 'xxxx',
-        y: 'yyyy'
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success (res) {
-        console.log(this)
-          _this.setData({
-            goods_name: res.data.goods_name,
-            price: res.data.price
-          })
+      url: 'http://shop.2004.com/api/goodslist',
+      header:{'content-type': 'application/json'},
+      success(res){
+        _this.setData({
+          list: res.data.data.list
+        })
       }
     })
-
 
     if (app.globalData.userInfo) {
       this.setData({

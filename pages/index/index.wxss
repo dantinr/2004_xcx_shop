@@ -3,3 +3,8 @@ button{
   margin-top: 30rpx;
   margin-bottom: 30rpx;
 }
+
+.goods-item{
+    margin-top: 5rpx;
+    margin-bottom:5rpx;
+}

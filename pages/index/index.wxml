@@ -2,5 +2,8 @@
 <view>
   <button type="primary" bindtap="btnLogin">登录</button>
 
-  <button type="primary" bindtap="loginInfo">Storage</button>
+  <view > 商品列表 </view>
+  <view wx:for="{{list}}" wx:key="list" class="goods-item">
+    {{item.goods_id}} - {{item.goods_name}} -  {{item.shop_price}}
+   </view>
 </view>
