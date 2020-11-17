@@ -29,3 +29,7 @@
     border-radius: 20rpx;
 
 }
+
+.nav-box .nav .item.current{
+    color: #cae696;
+}

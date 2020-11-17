@@ -20,7 +20,7 @@
   <view class="nav-box">
     <scroll-view scroll-x="true">
       <view class="nav">
-          <view class="item">全部</view>
+          <view class="item current">全部</view>
           <view class="item">BBB</view>
           <view class="item">CCC</view>
           <view class="item">DDD</view>
