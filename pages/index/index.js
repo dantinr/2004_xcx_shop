@@ -4,10 +4,10 @@ const app = getApp()
 
 Page({
   data: {
-    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    banners: ['/images/banner1.jpg', '/images/banner2.jpg', '/images/banner3.jpg'],
     indicatorDots: true,
     vertical: false,
-    autoplay: false,
+    autoplay: true,
     interval: 2000,
     duration: 500
   },
