@@ -4,17 +4,41 @@
   <view class="swiper-box">
 
     <!-- 轮播图 开始 -->
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
-        <block wx:for="{{banners}}" wx:key="*this">
-          <swiper-item>
-            <image src="{{item}}"></image>
-          </swiper-item>
-        </block>
-      </swiper>
-      <!-- 轮播图结束 -->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      circular="true">
+      <block wx:for="{{banners}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 轮播图结束 -->
 
   </view>
-  <view class="nav-box"></view>
+
+  <!-- 文字导航 开始 -->  
+  <view class="nav-box">
+    <scroll-view scroll-x="true">
+      <view class="nav">
+          <view class="item">全部</view>
+          <view class="item">BBB</view>
+          <view class="item">CCC</view>
+          <view class="item">DDD</view>
+          <view class="item">EEE</view>
+          <view class="item">FFF</view>
+          <view class="item">GGG</view>
+          <view class="item">HHH</view>
+          <view class="item">JJJ</view>
+          <view class="item">KKK</view>
+          <view class="item">LLL</view>
+          <view class="item">MMM</view>
+          <view class="item">NNN</view>
+          <view class="item">OOO</view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 文字导航结束 -->
+
   <view class="goods-box"></view>
 
 
