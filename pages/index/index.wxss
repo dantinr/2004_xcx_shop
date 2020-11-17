@@ -33,3 +33,21 @@
 .nav-box .nav .item.current{
     color: #cae696;
 }
+
+.goods-list .item{
+    font-display: flex;
+}
+
+.goods-list .item .img{
+    width: 200rpx;
+    height:200rpx;
+}
+.goods-list .item .img image{
+    width: 200rpx;
+    height:200rpx;
+}
+
+.goods-list .item .content{
+    width: 200rpx;
+    height:200rpx;
+}
