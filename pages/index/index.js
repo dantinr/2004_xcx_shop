@@ -10,6 +10,49 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+
+  //点击登录
+  btnLogin: function(e){
+
+    wx.login({
+      success (res) {
+        console.log(res)
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: 'http://shop.2004.com/wx/xcxlogin',
+            data: {
+              code: res.code
+            },
+            success:function(d)
+            {
+              //获取登录token
+              console.log(33333333)
+              wx.setStorage({
+                key:"token",
+                data:d.data.data.token
+              })
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
+
+  },
+
+  loginInfo:function(e)
+  {
+    let s = wx.getStorage({
+      key: 'token',
+      success(res){
+        console.log(res.data)
+      }
+    })
+
+  },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
