@@ -5,14 +5,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 500,
+    current:0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let _this = this;
+    let goods_id = options.id;    //获取商品id
+    wx.request({
+      url: "http://shop.2004.com/api/goods?id=" + goods_id,
+      header: {'content-type':'application/json'},
+      success(res){
+        console.log(res)
+        _this.setData({
+          goods: res.data.data.info,
+        })
+      }
+    })
+  },
 
+  /**
+   * 轮播图切换事件
+   * @param e
+   */
+  swipperChange:function(e)
+  {
+    let current = e.detail.current;
+    this.setData({
+      current:e.detail.current
+    })
   },
 
   /**

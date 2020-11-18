@@ -1,1 +1,25 @@
-/* pages/detail/detail.wxss */
+.swipper-box{
+    position:relative;
+}
+
+.swipper-box swiper{
+    height: 650rpx;
+}
+
+
+.swipper-box swiper image{
+    height: 100%;
+    width: 100%;
+}
+
+.swipper-box .tips {
+    position:absolute;
+    bottom:30rpx;
+    right:90rpx;
+    background:#333;
+    opacity:0.6;
+    border-radius:20rpx;
+    color:white;
+}
+
+
