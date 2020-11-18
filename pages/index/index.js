@@ -72,8 +72,12 @@ Page({
   //商品详情
   goodsDetail:function(e)
   {
+    //获取被点击的 商品id
     let goods_id = e.currentTarget.dataset.goodsid;
-    console.log(goods_id)
+    //切换至 详情页
+    wx.redirectTo({
+      url: '/pages/detail/detail?id='+goods_id
+    });
   },
 
   onLoad: function () {
