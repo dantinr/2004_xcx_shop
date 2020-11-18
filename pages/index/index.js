@@ -13,6 +13,7 @@ Page({
   },
 
 
+
   //点击登录
   btnLogin: function(e){
 
@@ -68,6 +69,9 @@ Page({
     })
   },
   onLoad: function () {
+
+
+
     let _this = this;
     //获取首页商品列表
     wx.request({

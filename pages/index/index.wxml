@@ -42,20 +42,19 @@
 
   <!-- 列表开始 -->
   <view class="goods-list">
-    <view class="item">
-      
+
+    <view class="item" wx:for="{{list}}">
       <view class="img">
-        <image src="https://img12.360buyimg.com/n1/s300x300_jfs/t1/108139/3/12599/414459/5e98519aE738bb116/7e38efd181b9704c.png!q70.webp"></image>
+        <image src="{{item.goods_img}}"></image>
       </view>
-
       <view class="content">
-        <view class="title">水电费来看就乐山大佛框架隆盛科技的逢狼时刻杰弗里斯框架分类树肯德基发离开家水电费</view>
+        <view class="title">{{item.goods_name}}</view>
         <view class="brand">Nokia</view>
-        <view class="price"> $199.99 </view>
+        <view class="price"> $ {{item.shop_price}} </view>
       </view>
-
-
     </view>
+
+
   </view>
   <!-- 列表结束 -->
 

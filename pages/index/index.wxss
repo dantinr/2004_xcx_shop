@@ -35,7 +35,9 @@
 }
 
 .goods-list .item{
-    font-display: flex;
+    display: flex;
+    margin-top:30rpx;
+
 }
 
 .goods-list .item .img{
@@ -48,6 +50,27 @@
 }
 
 .goods-list .item .content{
-    width: 200rpx;
+    width: 100%;
     height:200rpx;
+    padding-right:10rpx;
+}
+
+.goods-list .item .content .title{
+    margin-top: 10rpx;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.goods-list .item .content .brand{
+    font-size: 25rpx;
+    margin-top: 15rpx;
+    color: grey;
+}
+
+.goods-list .item .content .price{
+    margin-top: 15rpx;
 }
