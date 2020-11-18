@@ -43,7 +43,7 @@
   <!-- 列表开始 -->
   <view class="goods-list">
 
-    <view class="item" wx:for="{{list}}">
+    <view class="item" wx:for="{{list}}" data-goodsid="{{item.goods_id}}" bindtap="goodsDetail">
       <view class="img">
         <image src="{{item.goods_img}}"></image>
       </view>

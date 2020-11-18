@@ -68,6 +68,14 @@ Page({
       url: '../logs/logs'
     })
   },
+
+  //商品详情
+  goodsDetail:function(e)
+  {
+    let goods_id = e.currentTarget.dataset.goodsid;
+    console.log(goods_id)
+  },
+
   onLoad: function () {
 
 
