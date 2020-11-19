@@ -11,15 +11,14 @@ Page({
     interval: 2000,
     duration: 500,
     list:[],
-    page: 1,
-    pagesize:10,
+    page: 1,     // 列表 页号
+    pagesize:10,  //列表 大小
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log(111111)
     this.data.page++;
     this.getGoodsList();
   },
@@ -63,7 +62,7 @@ Page({
     wx.request({
       url: 'http://shop.2004.com/api/goodslist',
       data:{
-        page:_this.data.page,
+        page:_this.data.page,   //分页 页号
         size:_this.data.pagesize
       },
       header:{'content-type': 'application/json'},
