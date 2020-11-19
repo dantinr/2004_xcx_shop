@@ -22,4 +22,18 @@
     color:white;
 }
 
+.goods-info {
+    margin-top: 50rpx;
+    margin-left:50rpx;
+}
+
+.goods-info .title{
+    margin-top: 50rpx;
+}
+
+.goods-info .price{
+    color: #fc0;
+    margin-top: 30rpx;
+}
+
 

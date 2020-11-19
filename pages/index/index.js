@@ -24,37 +24,6 @@ Page({
   },
 
 
-  //点击登录
-  btnLogin: function(e){
-
-    wx.login({
-      success (res) {
-        console.log(res)
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: 'http://shop.2004.com/wx/xcxlogin',
-            data: {
-              code: res.code
-            },
-            success:function(d)
-            {
-              //获取登录token
-              console.log(33333333)
-              wx.setStorage({
-                key:"token",
-                data:d.data.data.token
-              })
-            }
-          })
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
-      }
-    })
-
-  },
-
   //获取商品数据
   getGoodsList: function()
   {
@@ -104,16 +73,48 @@ Page({
   //商品详情
   goodsDetail:function(e)
   {
+    //console.log("商品详情")
+    console.log(e)
     //获取被点击的 商品id
     let goods_id = e.currentTarget.dataset.goodsid;
     //切换至 详情页
     wx.redirectTo({
-      url: '/pages/detail/detail?id='+goods_id
+      url: '/pages/detail/detail?id='+ goods_id + '&aa=bbbb'
     });
   },
 
-  onLoad: function () {
+  onLoad: function (e) {
     this.getGoodsList();
+    this.doLogin();
+  },
+
+  //登录
+  doLogin:function(){
+    wx.login({
+      success (res) {
+        console.log(res)
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: 'http://shop.2004.com/wx/xcxlogin',
+            data: {
+              code: res.code
+            },
+            success:function(d)
+            {
+              //获取登录token
+              console.log(33333333)
+              wx.setStorage({
+                key:"token",
+                data:d.data.data.token
+              })
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
   },
 
 })

@@ -17,13 +17,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     let _this = this;
     let goods_id = options.id;    //获取商品id
+    let access_token = wx.getStorageSync('token')
     wx.request({
-      url: "http://shop.2004.com/api/goods?id=" + goods_id,
+      url: "http://shop.2004.com/api/goods",
+      data:{
+        id: goods_id,
+        access_token: access_token
+      },
       header: {'content-type':'application/json'},
       success(res){
-        console.log(res)
+        //console.log(res)
         _this.setData({
           goods: res.data.data.info,
         })
@@ -37,6 +43,7 @@ Page({
    */
   swipperChange:function(e)
   {
+
     let current = e.detail.current;
     this.setData({
       current:e.detail.current
