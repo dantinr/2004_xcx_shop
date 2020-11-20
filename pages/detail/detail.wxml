@@ -15,11 +15,7 @@
       <view class="tips">
           <text>{{current+1}}/{{goods.gallery.length}}</text>
       </view>
-
     </view>
-
-
-
     <!-- 商品相册 结束 -->
 
     <!-- 商品信息 开始 -->
@@ -29,16 +25,30 @@
     </view>
      <!-- 商品信息 结束 -->
 
-    <view class="address"> </view>
-
     <!-- 商品描述信息 开始 -->
-    <view class="detail-box"> </view>
+    <view class="desc-box">
+        <image src="{{item}}" wx:for="{{goods.desc_img}}"></image>
+    </view>
     <!-- 商品描述信息 结束 -->
 
     <!-- 底部导航 开始 -->
     <view class="bottom-nav">
+        <view class="nav-icon">
+            <view class="iconfont iconhome"></view>
+            <view> 首页 </view>
+        </view>
+        <view class="nav-icon">
+            <view class="iconfont iconphone"></view>
+            <view> 客服 </view>
+        </view>
+        <view class="nav-icon">
+            <view class="iconfont iconcart"></view>
+            <view> 购物车 </view>
+        </view>
+        <view class="nav-addcart">加入购物车</view>
+        <view class="nav-buynow">立即购买</view>
+    </view>
     <!-- 底部导航 结束 -->
 
-    </view>
 </view>
 
