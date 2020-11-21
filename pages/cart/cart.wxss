@@ -1,1 +1,60 @@
 /* pages/cart/cart.wxss */
+.cart-top {
+  display: flex;
+  background-color:#eee;
+  padding: 10rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.cart-top .top-left {
+  flex: 1;
+}
+
+.item-list {
+
+}
+.item-list .item {
+  display:flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.item-list .item image {
+  width:200rpx;
+  height: 200rpx;
+}
+
+.item-list .item .content {
+  margin-left: 15rpx;
+}
+
+.item-list .item .content .price-info {
+  display: flex;
+  padding: 15rpx 0;
+}
+.item-list .item .content .price-info .price {
+  color: #fc0;
+}
+.item-list .item .content .price-info .number {
+  display: flex;
+  border: 1rpx solid #eee;
+  border-radius: 10rpx;
+  text-align: center;
+  margin-left: 120rpx;
+
+}
+.item-list .item .content .price-info .number .decr {
+  width:45rpx;
+  border-right: 1rpx solid #eee;
+}
+.item-list .item .content .price-info .number .incr {
+  width:40rpx;
+  text-align: center;
+  border-left: 1rpx solid #eee;
+}
+.item-list .item .content .price-info .number input {
+  width:80rpx;
+  text-align: center;
+}
+
+
