@@ -12,36 +12,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.login({
-      success (res) {
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: 'http://shop.2004.com/wx/xcxlogin',
-            data: {
-              code: res.code
-            },
-            success : function(d)
-            {
-                console.log(d.data.data)
-                //将 token 保存在 小程序端
-              wx.setStorage({
-                key:"token",
-                data:d.data.data.token
-              })
-
-              let token = wx.getStorage({
-                key: 'token',
-                success(res){
-                  console.log(res.data)
-                }
-              })
-            }
-          })
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
-      }
+    this.setData({
+      user: wx.getStorageSync('user')
     })
   },
 
@@ -99,8 +71,9 @@ Page({
    */
   bindGetUserInfo: function(res)
   {
-    console.log(111111);
-    console.log(res);
+    //将用户信息保存在本地 storage
+
+    wx.setStorageSync('user', res.detail.userInfo)
     this.setData({
       user: res.detail.userInfo
     })
