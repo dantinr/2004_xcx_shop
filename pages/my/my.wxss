@@ -1,1 +1,36 @@
 /* pages/my/my.wxss */
+page {
+  height: 100%;
+}
+
+.page-box {
+  background-color: #eee;
+  height: 100%;
+  padding-top: 20rpx;
+}
+
+.login-info {
+  display: flex;
+  height: 170rpx;
+  background-color: #fff;
+  padding: 10rpx 20rpx;
+}
+.login-info image {
+  width: 160rpx;
+  height: 160rpx;
+}
+.login-info .login {
+  margin-left: 30rpx;
+}
+.login-info .login .top {
+  font-size: 36rpx;
+  margin-top:30rpx;
+}
+.login-info .login .desc {
+  font-size: 25rpx;
+  color:#e00;
+}
+.btn-login {
+  width: 100%!important;
+  padding: 0;
+}

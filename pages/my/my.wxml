@@ -1,2 +1,24 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="page-box">
+  <!-- 未登录 开始 -->
+  <button wx:if="{{!user.nickName}}" class="btn-login" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    <view class="login-info">
+    <image src="/images/login0.png"></image>
+    <view class="login">
+      <view class="top"> 点击登录 </view>
+    </view>
+  </view>
+  </button>
+
+  <!-- 未登录 结束 -->
+
+  <!-- 已登录 开始 -->
+  <view class="login-info" wx:if="{{user.nickName}}">
+    <image src="{{user.avatarUrl}}"></image>
+    <view class="login">
+      <view class="top"> {{user.nickName}} </view>
+      <view class="desc"> VIP </view>
+    </view>
+  </view>
+  <!-- 已登录 结束 -->
+</view>

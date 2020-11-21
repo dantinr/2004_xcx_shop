@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    user:{}
   },
 
   /**
@@ -92,5 +92,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 获取用户信息
+   */
+  bindGetUserInfo: function(res)
+  {
+    console.log(111111);
+    console.log(res);
+    this.setData({
+      user: res.detail.userInfo
+    })
   }
+
 })
