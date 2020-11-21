@@ -90,20 +90,12 @@
 }
 
 .desc-box {
-    margin-top: 20rpx;
-    width: 100%;
-    padding:10rpx;
-    margin-bottom: 65rpx;
-}
-
-.desc-box .desc-img {
-    margin: 0;
+    
 }
 
 .desc-box image {
     width: 100%;
 }
-
 
 
 
