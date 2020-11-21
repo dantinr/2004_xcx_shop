@@ -25,16 +25,31 @@
 .goods-info {
     margin-top: 50rpx;
     margin-left:50rpx;
+    margin-bottom: 100rpx;
 }
 
 .goods-info .title{
-    margin-top: 50rpx;
+    margin-top: 15rpx;
 }
 
 .goods-info .price{
     color: #fc0;
     margin-top: 30rpx;
 }
+
+.goods-info .goods-share {
+    display: flex;
+    height: 60rpx;
+}
+
+
+.goods-info .goods-share .btn-share {
+    width: 100rpx;
+    padding: 8px 0;
+    margin-right: 10rpx;
+    background-color: #fff;
+}
+
 
 .bottom-nav {
     width: 100%;
@@ -43,7 +58,6 @@
     position: fixed;
     left: 0;
     bottom: 0;
-
 }
 
 .bottom-nav .iconfont
@@ -78,7 +92,7 @@
 .desc-box {
     margin-top: 20rpx;
     width: 100%;
-    padding:20rpx;
+    padding:10rpx;
     margin-bottom: 65rpx;
 }
 
@@ -89,6 +103,7 @@
 .desc-box image {
     width: 100%;
 }
+
 
 
 
