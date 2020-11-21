@@ -60,8 +60,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "商品详情页",
+          "pathName": "pages/cart/cart",
+          "query": "",
+          "scene": null
+        },
+        {
           "name": "购物车",
           "pathName": "pages/cart/cart",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/my/my",
           "scene": null
         }
       ]
