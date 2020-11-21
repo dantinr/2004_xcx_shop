@@ -90,11 +90,12 @@
 }
 
 .desc-box {
-    
+    padding: 15rpx;
 }
 
 .desc-box image {
     width: 100%;
+    display: block;
 }
 
 
