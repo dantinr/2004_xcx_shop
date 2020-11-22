@@ -77,6 +77,13 @@ Page({
     this.setData({
       user: res.detail.userInfo
     })
+  },
+  //跳转订单页面
+  switchOrder:function()
+  {
+    wx.switchTab({
+      url: '/pages/order/order',
+    })
   }
 
 })

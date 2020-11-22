@@ -26,19 +26,19 @@
   <view class="user-center">
     <view class="item">
       个人资料
-      <text class="iconfont iconhome"></text>
+      <text class="iconfont iconarrow"></text>
     </view>
     <view class="item">
       会员中心
-      <text class="iconfont iconhome"></text>
+      <text class="iconfont iconarrow"></text>
     </view>
-    <view class="item">
+    <view class="item" bindtap="switchOrder">
       我的订单
-      <text class="iconfont iconhome"></text>
+      <text class="iconfont iconarrow"></text>
     </view>
     <view class="item">
       退出登录
-      <text class="iconfont iconhome"></text>
+      <text class="iconfont iconarrow"></text>
     </view>
   </view>
   <!-- 个人信息 结束 -->

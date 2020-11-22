@@ -44,6 +44,7 @@ page {
   line-height: 50rpx;
   border-bottom: 1rpx solid #eee;
   padding: 15rpx 20rpx;
+  font-size: 25rpx;
 }
 .user-center .item text{
   float: right;
