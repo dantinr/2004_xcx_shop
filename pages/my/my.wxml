@@ -21,4 +21,25 @@
     </view>
   </view>
   <!-- 已登录 结束 -->
+
+  <!-- 个人信息 开始 -->
+  <view class="user-center">
+    <view class="item">
+      个人资料
+      <text class="iconfont iconhome"></text>
+    </view>
+    <view class="item">
+      会员中心
+      <text class="iconfont iconhome"></text>
+    </view>
+    <view class="item">
+      我的订单
+      <text class="iconfont iconhome"></text>
+    </view>
+    <view class="item">
+      退出登录
+      <text class="iconfont iconhome"></text>
+    </view>
+  </view>
+  <!-- 个人信息 结束 -->
 </view>
