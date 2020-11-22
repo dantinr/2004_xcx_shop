@@ -30,7 +30,7 @@
 
     <!-- 商品描述信息 开始 -->
     <view class="desc-box">
-        <image mode="widthFix" src="{{item}}" wx:for="{{goods.desc_img}}"></image>
+        <image mode="widthFix" src="{{item}}" wx:for="{{goods.desc_img}}" wx:key="*this"></image>
     </view>
     <!-- 商品描述信息 结束 -->
 
@@ -48,7 +48,7 @@
             <view class="iconfont iconcart"></view>
             <view> 购物车 </view>
         </view>
-        <view class="nav-addcart">加入购物车</view>
+        <view class="nav-addcart" bindtap="addCart">加入购物车</view>
         <view class="nav-buynow">立即购买</view>
     </view>
     <!-- 底部导航 结束 -->

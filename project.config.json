@@ -60,12 +60,6 @@
     "miniprogram": {
       "list": [
         {
-          "name": "商品详情页",
-          "pathName": "pages/cart/cart",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "购物车",
           "pathName": "pages/cart/cart",
           "query": "",
@@ -74,6 +68,13 @@
         {
           "name": "我的",
           "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品详情页",
+          "pathName": "pages/detail/detail",
+          "query": "id=217",
           "scene": null
         }
       ]

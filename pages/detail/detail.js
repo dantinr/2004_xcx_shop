@@ -97,5 +97,25 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  //添加购物车
+  addCart:function()
+  {
+    wx.request({
+      url: 'http://shop.2004.com/api/add-cart',
+      method:'POST',
+      dataType: 'json',
+      header: {'content-type':'application/x-www-form-urlencoded'},
+      data:{
+        token:'abcd',
+        num: 2,
+        goodsid: 1234
+      },
+      sucess:function(res)
+      {
+        console.log(res)
+      }
+    })
   }
 })
