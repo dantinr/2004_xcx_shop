@@ -48,7 +48,7 @@
             <view class="iconfont iconcart"></view>
             <view> 购物车 </view>
         </view>
-        <view class="nav-addcart" bindtap="addCart">加入购物车</view>
+        <view class="nav-addcart" data-goodsid="{{goods.goods_id}}" bindtap="addCart">加入购物车</view>
         <view class="nav-buynow">立即购买</view>
     </view>
     <!-- 底部导航 结束 -->
