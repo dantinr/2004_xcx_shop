@@ -76,6 +76,18 @@
           "pathName": "pages/detail/detail",
           "query": "id=217",
           "scene": null
+        },
+        {
+          "name": "商品详情2222",
+          "pathName": "pages/detail/detail",
+          "query": "id=217",
+          "scene": null
+        },
+        {
+          "name": "登录测试",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
         }
       ]
     }

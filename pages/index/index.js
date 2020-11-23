@@ -96,14 +96,10 @@ Page({
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: 'http://shop.2004.com/wx/xcxlogin',
-            data: {
-              code: res.code
-            },
+            url: 'http://shop.2004.com/api/home-login?code='+res.code,
             success:function(d)
             {
               //获取登录token
-              console.log(33333333)
               wx.setStorage({
                 key:"token",
                 data:d.data.data.token

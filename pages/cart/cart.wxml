@@ -5,7 +5,7 @@
     <view class="top-left">共一件商品</view>
     <view class="top-right">删除</view>
   </view>
-  <!-- 头部结束 -->
+  <!-- 头部结束 -->   
 
   <!-- 列表开始 -->
   <view class="item-list">
