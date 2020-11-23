@@ -102,13 +102,15 @@ Page({
   //添加购物车
   addCart:function()
   {
+    let token = wx.getStorageSync('token');
+    console.log(1111111);
+    console.log(token)
     wx.request({
-      url: 'http://shop.2004.com/api/add-cart',
+      url: 'http://shop.2004.com/api/add-cart?token='+token,
       method:'POST',
       dataType: 'json',
       header: {'content-type':'application/x-www-form-urlencoded'},
       data:{
-        token:'abcd',
         num: 2,
         goodsid: 1234
       },
