@@ -45,24 +45,7 @@ Page({
       }
     })
   },
-
-  //获取storage
-  loginInfo:function(e)
-  {
-    wx.getSetting({
-      success(res){
-        console.log(res);
-      }
-    })
-    let s = wx.getStorage({
-      key: 'token',
-      success(res){
-        console.log(res.data)
-      }
-    })
-
-  },
-
+  
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -73,13 +56,11 @@ Page({
   //商品详情
   goodsDetail:function(e)
   {
-    //console.log("商品详情")
-    console.log(e)
     //获取被点击的 商品id
     let goods_id = e.currentTarget.dataset.goodsid;
     //切换至 详情页
     wx.redirectTo({
-      url: '/pages/detail/detail?id='+ goods_id + '&aa=bbbb'
+      url: '/pages/detail/detail?id='+ goods_id
     });
   },
 
@@ -92,7 +73,6 @@ Page({
   doLogin:function(){
     wx.login({
       success (res) {
-        console.log(res)
         if (res.code) {
           //发起网络请求
           wx.request({
