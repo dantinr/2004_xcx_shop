@@ -72,8 +72,32 @@ Page({
   bindGetUserInfo: function(res)
   {
     //将用户信息保存在本地 storage
+    console.log(res)
+    let userinfo = res.detail.userInfo
+    wx.setStorageSync('user', userinfo)
 
-    wx.setStorageSync('user', res.detail.userInfo)
+    let token = wx.getStorageSync('token')
+    wx.login({
+      success (res) {
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: 'http://shop.2004.com/api/user-login?code=' + res.code +'&token='+token,
+            method: 'post',
+            header:{'content-type':'application/json'},
+            data: {
+              u: userinfo
+            },
+            success: function(res){
+              wx.setStorageSync('token',res.data.data.token)
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
+
     this.setData({
       user: res.detail.userInfo
     })
