@@ -117,5 +117,16 @@ Page({
         console.log(res)
       }
     })
+  },
+
+  // 拨打电话
+  makeCall:function()
+  {
+    wx.makePhoneCall({
+      phoneNumber: '15010578121'
+    })
   }
+
+
+
 })

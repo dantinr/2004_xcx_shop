@@ -40,7 +40,7 @@
             <view class="iconfont iconhome "></view>
             <view> 首页 </view>
         </view>
-        <view class="nav-icon">
+        <view class="nav-icon" bindtap="makeCall">
             <view class="iconfont iconphone"></view>
             <view> 客服 </view>
         </view>
