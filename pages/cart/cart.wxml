@@ -90,20 +90,18 @@
   <!-- 列表结束 -->
 
   <!-- 底部结算 开始 -->
-  <view class="check">
-    <view class="select-all">
+  <view class="total-box">
+    <view class="all">
       <checkbox-group>
-        <checkbox value="1" />
+        <checkbox value="1" checked="{{true}}" />
         <text>全选</text>
-      </checkbox-group> 
+      </checkbox-group>
     </view>
-    <view class="price">
-      总价： <text>￥123.45</text>
+    <view class="total-price">
+      总价：
+      <text class="price">$88.88</text>
     </view>
-    <view class="btn-check">
-      <button>去结算</button>
-    </view>
-    
+    <view class="btn btn-default">去结算</view>
   </view>
   <!-- 底部结算 结束 -->
 </view>

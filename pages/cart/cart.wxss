@@ -1,4 +1,7 @@
 /* pages/cart/cart.wxss */
+page {
+  background-color:#eee;
+}
 .cart-top {
   display: flex;
   background-color:#eee;
@@ -11,9 +14,6 @@
   flex: 1;
 }
 
-.item-list {
-
-}
 .item-list .item {
   display:flex;
   align-items: center;
@@ -57,22 +57,40 @@
   text-align: center;
 }
 
-.check {
+.total-box {
   display:flex;
-  width:100%;
+  background-color: #fff;
+  width: 100%;
+  height:100rpx;
   align-items: center;
-  padding:15rpx;
-  position: fixed;
+  position:fixed;
   bottom:0;
+  left:0;
 }
-.check .price {
-  color:#fc0;
+.total-box .all {
+  font-size: 28rpx;
+  width:200rpx;
+  padding-left: 20rpx;
 }
-.check .btn-check button {
-  width:150rpx;
-  font-size: 26rpx;
-  padding:5rpx;
-  float:right;
+.total-box .total-price {
+  font-size: 30rpx;
+  flex:1;
 }
+.total-box .total-price .price {
+  color:red;
+}
+.total-box .btn {
+  width: 130rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size:30rpx;
+  height:70rpx;
+  line-height: 70rpx;
+  margin-right:20rpx;
+  background-color: orange;
+  color:#fff;
+}
+
+
 
 
