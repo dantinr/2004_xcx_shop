@@ -1,4 +1,5 @@
 // pages/detail/detail.js
+const app = getApp()
 Page({
 
   /**
@@ -22,7 +23,7 @@ Page({
     let goods_id = options.id;    //获取商品id
     let access_token = wx.getStorageSync('token')
     wx.request({
-      url: "http://shop.2004.com/api/goods",
+      url: app.globalData.apiUrl + "/api/goods",
       data:{
         id: goods_id,
         access_token: access_token

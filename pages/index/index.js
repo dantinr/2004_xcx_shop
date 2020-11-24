@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const apihost = app.globalData.apiUrl;  //本地
 Page({
   data: {
     banners: ['/images/banner1.jpg', '/images/banner2.jpg', '/images/banner3.jpg'],
@@ -29,7 +29,7 @@ Page({
   {
     let _this = this;
     wx.request({
-      url: 'http://shop.2004.com/api/goodslist',
+      url: apihost + '/api/goodslist',
       data:{
         page:_this.data.page,   //分页 页号
         size:_this.data.pagesize
@@ -76,7 +76,7 @@ Page({
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: 'http://shop.2004.com/api/home-login?code='+res.code,
+            url: apihost + '/api/home-login?code='+res.code,
             success:function(d)
             {
               //获取登录token
