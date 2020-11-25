@@ -107,16 +107,20 @@ Page({
     let goods_id = data.currentTarget.dataset.goodsid
     let token = wx.getStorageSync('token');
     wx.request({
-      url: 'http://shop.2004.com/api/add-cart?token='+token,
+      url: apiHost + '/api/add-cart?token='+token,
       method:'POST',
       dataType: 'json',
       header: {'content-type':'application/x-www-form-urlencoded'},
       data:{
         goodsid: goods_id
       },
-      sucess:function(res)
+      success:function(res)
       {
-        console.log(res)
+        wx.showToast({
+          title: '加入购物车成功',
+          icon: 'success',
+          duration: 2000
+        })
       }
     })
   },
@@ -150,7 +154,15 @@ Page({
     let goods_id = e.currentTarget.dataset.goodsid
     let token = wx.getStorageSync('token')
     wx.request({
-      url: apiHost + '/api/add-fav?id=' + goods_id + '&token=' +token
+      url: apiHost + '/api/add-fav?id=' + goods_id + '&token=' +token,
+      success: function()
+      {
+        wx.showToast({
+          title: '收藏成功',
+          icon: 'success',
+          duration: 2000
+        })
+      }
     })
   }
 
