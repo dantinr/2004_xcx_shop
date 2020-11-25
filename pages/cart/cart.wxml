@@ -11,12 +11,10 @@
   <view class="item-list">
     <view class="item" wx:for="{{goodsList}}" wx:key="*this">
       <checkbox-group>
-        <checkbox value="1" checked="false"> </checkbox>
+        <checkbox value="1" checked="{{item.checked}}"> </checkbox>
       </checkbox-group>
       <view class="pic">
-        <image
-                src="//m.360buyimg.com/mobilecms/s750x750_jfs/t1/130023/13/12256/67179/5f8611b5E0f7a0734/23bb6303ba8bc3ce.jpg!q80.dpg">
-        </image>
+        <image src="//m.360buyimg.com/mobilecms/s750x750_jfs/t1/130023/13/12256/67179/5f8611b5E0f7a0734/23bb6303ba8bc3ce.jpg!q80.dpg"></image>
       </view>
       <view class="content">
         <view class="title">{{item.goods_name}}</view>
@@ -25,10 +23,9 @@
           <view class="price">${{item.cart_price}}</view>
           <view class="number">
             <view class="decr">-</view>
-            <input value="9"></input>
+            <input value="{{item.goods_num}}"></input>
             <view class="incr">+</view>
           </view>
- 
         </view>
       </view>
     </view>
@@ -45,7 +42,7 @@
     </view>
     <view class="total-price">
       总价：
-      <text class="price">$88.88</text>
+      <text class="price">${{totalAmount}}</text>
     </view>
     <view class="btn btn-default">去结算</view>
   </view>

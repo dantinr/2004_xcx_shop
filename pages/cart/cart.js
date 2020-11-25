@@ -9,6 +9,7 @@ Page({
   data: {
     isSelectAll: false,
     goodsList:[],
+    totalAmount:0
   },
 
   /**
@@ -74,8 +75,9 @@ Page({
   getCartList: function()
   {
     let _this = this;
+    let token = wx.getStorageSync('token')
     wx.request({
-      url: apiHost + '/api/cart-list',
+      url: apiHost + '/api/cart-list?token='+token,
       success: function(d)
       {
 
@@ -99,18 +101,23 @@ Page({
   {
     let _this = this;
     let isSelectAll = !_this.data.isSelectAll;
+    let list = _this.data.goodsList;
+    let total = 0;
 
-    //全选
-    if(isSelectAll)
-    {
-      console.log("全选");
-
-    }else{
-      console.log("全不选")
-    }
+    list.forEach((item)=>{
+      if(isSelectAll)   //全选
+      {
+        item.checked = true;
+        total += item.goods_num * item.cart_price
+      }else{
+        item.checked = false;
+      }
+    })
 
     _this.setData({
+      goodsList:list,
       isSelectAll:isSelectAll,
+      totalAmount:total
     })
 
   }
