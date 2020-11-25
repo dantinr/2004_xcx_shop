@@ -28,8 +28,8 @@
             <input value="9"></input>
             <view class="incr">+</view>
           </view>
+ 
         </view>
-
       </view>
     </view>
   </view>

@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 const app = getApp()
+const apiHost = app.globalData.apiUrl
 Page({
 
   /**
@@ -125,6 +126,31 @@ Page({
   {
     wx.makePhoneCall({
       phoneNumber: '15010578121'
+    })
+  },
+
+  switchToHome: function()
+  {
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
+
+  switchToCart: function()
+  {
+    wx.switchTab({
+      url: '/pages/cart/cart'
+    })
+  },
+
+  //加入收藏
+  addFav:function(e)
+  {
+    console.log(e)
+    let goods_id = e.currentTarget.dataset.goodsid
+    let token = wx.getStorageSync('token')
+    wx.request({
+      url: apiHost + '/api/add-fav?id=' + goods_id + '&token=' +token
     })
   }
 

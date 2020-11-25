@@ -32,9 +32,18 @@
     margin-top: 15rpx;
 }
 
-.goods-info .price{
-    color: #fc0;
+.goods-info .fav {
+    display: flex;
+    align-items: center;
     margin-top: 30rpx;
+}
+.goods-info .fav .price{
+    color: #fc0;
+}
+
+.goods-info .fav .favicon {
+    margin-left: 20rpx;
+    font-size: 50rpx;
 }
 
 .goods-info .goods-share {
@@ -97,6 +106,7 @@
     width: 100%;
     display: block;
 }
+
 
 
 

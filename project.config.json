@@ -88,6 +88,11 @@
           "pathName": "pages/login/login",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "test",
+          "pathName": "pages/test/test",
+          "scene": null
         }
       ]
     }

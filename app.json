@@ -6,7 +6,8 @@
     "pages/my/my",
     "pages/order/order",
     "pages/cart/cart",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,2 @@
+<!--pages/test/test.wxml-->
+<button bindtap="makeCall"> 拨打电话 </button>

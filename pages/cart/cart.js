@@ -68,6 +68,9 @@ Page({
 
   },
 
+  /**
+   * 获取购物车商品列表
+   */
   getCartList: function()
   {
     let _this = this;
@@ -75,7 +78,16 @@ Page({
       url: apiHost + '/api/cart-list',
       success: function(d)
       {
-        _this.setData({goodsList:d.data.data.list})
+
+        if(d.data.errno==0)   //请求接口成功
+        {
+          _this.setData({
+            goodsList:d.data.data.list
+          })
+        }else{
+          console.log("接口请求错误")
+        }
+
       }
     })
   },
