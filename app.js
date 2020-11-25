@@ -35,7 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    apiUrl: 'https://2004shop.comcto.com',
-    //apiUrl: 'http://shop.2004.com',
+    //apiUrl: 'https://2004shop.comcto.com',
+    apiUrl: 'http://shop.2004.com',
   }
 })

@@ -2,6 +2,7 @@
 page {
   background-color:#eee;
 }
+
 .cart-top {
   display: flex;
   background-color:#eee;
