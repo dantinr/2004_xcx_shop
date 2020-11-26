@@ -120,5 +120,9 @@ Page({
       totalAmount:total
     })
 
+  },
+
+  selectGoods: function (e){
+    console.log(e)
   }
 })

@@ -9,10 +9,9 @@
 
   <!-- 列表开始 -->
   <view class="item-list">
+    <checkbox-group bindchange="selectGoods">
     <view class="item" wx:for="{{goodsList}}" wx:key="*this">
-      <checkbox-group>
-        <checkbox value="1" checked="{{item.checked}}"> </checkbox>
-      </checkbox-group>
+      <checkbox value="{{item.goods_id}}" checked="{{item.checked}}"> </checkbox>
       <view class="pic">
         <image src="//m.360buyimg.com/mobilecms/s750x750_jfs/t1/130023/13/12256/67179/5f8611b5E0f7a0734/23bb6303ba8bc3ce.jpg!q80.dpg"></image>
       </view>
@@ -29,6 +28,7 @@
         </view>
       </view>
     </view>
+    </checkbox-group>
   </view>
   <!-- 列表结束 -->
 
