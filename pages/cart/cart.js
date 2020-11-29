@@ -129,15 +129,22 @@ Page({
     let total = 0;
 
     list.forEach((item)=>{
+      item.checked = false;
       goods.forEach((item2)=>{
         if(item.goods_id==item2){
+          item.checked = true;      //记录选中状态
           total += item.cart_price * item.goods_num   //计算新的总价
         }
       })
     })
 
+    let isSelectAll =  list.every(function(item){   //遍历商品列表 检查是否全部勾选
+      return item.checked;
+    })
+
     this.setData({
-      totalAmount:total
+      totalAmount:total,
+      isSelectAll:isSelectAll
     })
 
   }
