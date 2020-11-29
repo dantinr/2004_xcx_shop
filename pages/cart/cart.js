@@ -152,8 +152,10 @@ Page({
   //删除商品
   delGoods: function(e)
   {
+    let _this = this;
     let selectGoods = [];
-    let list = this.data.goodsList;
+    let list = _this.data.goodsList;
+    let token = wx.getStorageSync('token')
     list.forEach(item=>{
       if(item.checked){   //选中的商品
         selectGoods.push(item.goods_id)
@@ -167,13 +169,31 @@ Page({
         content: '是否删除选中的商品？',
         success (res) {
           if (res.confirm) {
-            console.log('用户点击确定')
+            console.log('删除商品')
+            wx.request({
+              url: apiHost + '/api/cart-del?token='+token, //仅为示例，并非真实的接口地址
+              method: 'post',
+              data: {
+                goods: selectGoods.toString(),
+              },
+              header: {
+                'content-type': 'application/json' // 默认值
+              },
+              success (res) {
+                console.log("删除成功")
+                _this.getCartList();
+                _this.setData({
+                  isSelectAll:false,
+                  totalAmount:0
+                })
+              }
+            })
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
         }
       })
-    }else{
+    }else{    //未选中商品
       wx.showToast({
         title: '请先选择要删除的商品',
         icon: 'none',
