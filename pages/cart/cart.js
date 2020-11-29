@@ -147,5 +147,42 @@ Page({
       isSelectAll:isSelectAll
     })
 
+  },
+
+  //删除商品
+  delGoods: function(e)
+  {
+    let selectGoods = [];
+    let list = this.data.goodsList;
+    list.forEach(item=>{
+      if(item.checked){   //选中的商品
+        selectGoods.push(item.goods_id)
+      }
+    })
+
+    if(selectGoods.length>0)
+    {
+      wx.showModal({
+        title: '提示',
+        content: '是否删除选中的商品？',
+        success (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '请先选择要删除的商品',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+
   }
+
+
+
 })

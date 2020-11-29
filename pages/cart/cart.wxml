@@ -3,7 +3,7 @@
   <!-- 头部开始  -->
   <view class="cart-top">
     <view class="top-left">共一件商品</view>
-    <view class="top-right">删除</view>
+    <view class="top-right" bindtap="delGoods">删除</view>
   </view>
   <!-- 头部结束 -->   
 
