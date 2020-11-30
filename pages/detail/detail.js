@@ -107,7 +107,7 @@ Page({
     let goods_id = data.currentTarget.dataset.goodsid
     let token = wx.getStorageSync('token');
     wx.request({
-      url: apiHost + '/api/add-cart?token='+token,
+      url: apiHost + '/api/cart-add?token='+token,
       method:'POST',
       dataType: 'json',
       header: {'content-type':'application/x-www-form-urlencoded'},

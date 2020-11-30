@@ -124,6 +124,7 @@ Page({
 
   //购物车单选
   selectGoods: function (e){
+    console.log(e)
     let goods = e.detail.value    //获取checkbox中选中的value
     let list = this.data.goodsList    //获取当前页面中的商品列表
     let total = 0;
