@@ -205,7 +205,7 @@ Page({
   },
 
   //购物车增加商品数量
-  addGoods:function(e)
+  incrGoods:function(e)
   {
     let _this = this;
     let token = wx.getStorageSync('token')
@@ -219,8 +219,10 @@ Page({
     wx.request({
       url: apiHost + '/api/cart-add?token='+token,
       method: 'post',
+      header: {'content-type': 'application/x-www-form-urlencoded'},
       data:{
-        goodsid: goods_id
+        goodsid: goods_id,              //商品ID
+        num:list[index].goods_num       //商品数量
       },
       success: function(d)
       {
@@ -236,6 +238,54 @@ Page({
 
       }
     })
+
+  },
+
+  //购物车减少商品数量
+  decrGoods:function(e)
+  {
+    let _this = this;
+    let token = wx.getStorageSync('token')
+    let list = _this.data.goodsList;    //  当前页面的商品列表
+    let index = e.currentTarget.dataset.goodsindex
+    let goods_id = list[index].goods_id
+
+    if(list[index].goods_num==1)
+    {
+      list[index].goods_num = 1
+      wx.showToast({
+        title: '不能再减少了',
+        icon: 'none',
+        duration: 2000
+      })
+    }else{
+      list[index].goods_num--;    //商品数量 -1
+      //请求后端购物车接口
+      wx.request({
+        url: apiHost + '/api/cart-add?token='+token,
+        method: 'post',
+        data:{
+          goodsid: goods_id,              //商品ID
+          num: list[index].goods_num      //商品数量
+        },
+        header: {'content-type': 'application/x-www-form-urlencoded'},
+        success: function(d)
+        {
+
+          if(d.data.errno==0)   //请求接口成功
+          {
+            _this.setData({
+              goodsList:list
+            })
+          }else{
+            console.log("接口请求错误")
+          }
+
+        }
+      })
+    }
+
+
 
   }
 
