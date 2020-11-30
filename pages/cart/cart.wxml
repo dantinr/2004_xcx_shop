@@ -23,7 +23,7 @@
           <view class="number">
             <view class="decr">-</view>
             <input value="{{item.goods_num}}"></input>
-            <view class="incr">+</view>
+            <view class="incr" data-goodsindex="{{index}}" bindtap="addGoods">+</view>
           </view>
         </view>
       </view>

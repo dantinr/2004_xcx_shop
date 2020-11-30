@@ -201,6 +201,41 @@ Page({
       })
     }
 
+  },
+
+  //购物车增加商品数量
+  addGoods:function(e)
+  {
+    let _this = this;
+    let token = wx.getStorageSync('token')
+    let list = _this.data.goodsList;    //  当前页面的商品列表
+    let index = e.currentTarget.dataset.goodsindex
+    let goods = list[index];    //获取添加数量的商品
+    let goods_id = list[index].goods_id
+    list[index].goods_num++;    //商品数量 +1
+
+    //请求后端购物车接口
+    wx.request({
+      url: apiHost + '/api/cart-add?token='+token,
+      method: 'post',
+      data:{
+        goodsid: goods_id
+      },
+      success: function(d)
+      {
+
+        if(d.data.errno==0)   //请求接口成功
+        {
+          _this.setData({
+            goodsList:list
+          })
+        }else{
+          console.log("接口请求错误")
+        }
+
+      }
+    })
+
   }
 
 
